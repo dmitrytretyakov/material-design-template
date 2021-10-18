@@ -24,7 +24,7 @@
 }
 
 #nav_f{
-    box-shadow: none !important; 
+    box-shadow: none !important;
     -webkit-box-shadow:none !important;
 }
 
@@ -242,10 +242,6 @@ nav a.button-collapse {
 
 .card-avatar .card-content {
     text-align: center;
-}
-
-.card .card-content p {
-    margin: 15px 0px;
 }
 
 .card-avatar .card-content i {
