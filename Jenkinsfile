@@ -7,9 +7,9 @@ pipeline {
           steps {
             nodejs(nodeJSInstallationName: 'server-js') {
               sh '''#!/bin/bash
-                    for file in $(ls www/css)
+                    for file in $(ls www/js)
                     do
-                      uglifyjs www/css/$file -c -o www/min/$file
+                      uglifyjs www/js/$file -c -o www/min/$file
                       cat www/min/$file
                     done
               '''
