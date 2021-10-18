@@ -24,6 +24,7 @@ pipeline {
                       cleancss -o www/min/$file www/css/$file
                     done
               '''
+            }
           }
         }
       }
