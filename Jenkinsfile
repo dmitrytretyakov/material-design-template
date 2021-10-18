@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Archiving result') {
       steps {
-        sh 'tar -czfv site.tar.gz www'
+        sh 'tar -czvf site.tar.gz www'
       }
     }
   }
