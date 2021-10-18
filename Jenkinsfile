@@ -1,6 +1,7 @@
 node {
   env.NODEJS_HOME = "${tool 'server-js'}"
   env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+  try {
       parallel js: {
         stage('Compress js') {
           sh '''#!/bin/bash
@@ -24,9 +25,7 @@ node {
     stage('Archiving result') {
       sh 'tar -czvf site.tar.gz www'
     }
-  post {
-    success {
-      archiveArtifacts artifacts: 'site.tar.gz'
-    }
+  } finally {
+      archiveArtifacts artifacts: 'site.tar.gz', onlyIfSuccessful: true
   }
 }
