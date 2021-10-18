@@ -29,5 +29,15 @@ pipeline {
         }
       }
     }
+    stage('Archiving result') {
+      steps {
+        sh 'tar -czfv site.tar.gz www'
+      }
+    }
+  }
+  post {
+    success {
+      archiveArtifacts artifacts: 'site.tar.gz'
+    }
   }
 }
